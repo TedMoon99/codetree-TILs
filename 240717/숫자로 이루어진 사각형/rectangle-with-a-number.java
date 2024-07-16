@@ -13,13 +13,10 @@ public class Main {
         for(int i=0; i< n; i++){
             // n번 반복
             for(int j =0; j<n; j++){
-                // 9 보다 큰 경우
-                if( 4*i + j + 1 > 9){
-                    int count = (4*i + j + 1) / 9;
-                    System.out.print((4 * i + j + 1 - 9 * count)+" ");
-                } else {
-                    System.out.print((4 * i + j+1)+" ");
-                }
+                // 해당 숫자가 10이상인 경우 
+                int count = (n * i + j) / 9;
+                // 출력
+                System.out.print((n * i + j + 1 - 9 * count)+" ");
             }
             System.out.println();
         }
