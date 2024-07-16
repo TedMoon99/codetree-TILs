@@ -15,7 +15,8 @@ public class Main {
             for(int j =0; j<n; j++){
                 // 9 보다 큰 경우
                 if( 4*i + j + 1 > 9){
-                    System.out.print((4 * i + j + 1 - 9)+" ");
+                    int count = (4*i + j + 1) / 9;
+                    System.out.print((4 * i + j + 1 - 9 * count)+" ");
                 } else {
                     System.out.print((4 * i + j+1)+" ");
                 }
