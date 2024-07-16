@@ -12,11 +12,16 @@ public class Main {
 
     public static void printGcd(int n, int m){
         int gcd = 1;
-        for (int i =1; i<=n; i++){
-            for (int j=1; j<=m; j++){
-                // n과 m의 공약수
-                if ( n % i == 0 && m % j == 0 && i == j){
-                    gcd = i = j;
+        if(n <= m){
+            for(int i = 1; i <=n; i++){
+                if(n % i == 0 && m %i == 0){
+                    gcd = i;
+                }
+            }
+        } else {
+            for(int i = 1; i <=m; i++){
+                if(n % i == 0 && m %i == 0){
+                    gcd = i;
                 }
             }
         }
