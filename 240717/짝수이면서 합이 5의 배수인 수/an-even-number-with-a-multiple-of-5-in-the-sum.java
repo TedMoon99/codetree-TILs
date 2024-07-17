@@ -19,6 +19,7 @@ public class Main {
         if ( sum % 5 == 0){ // 5의 배수인 경우
             return "Yes";
         }
+        }
         return "No";
     }
 
