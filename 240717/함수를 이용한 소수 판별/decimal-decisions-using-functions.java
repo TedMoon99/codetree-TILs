@@ -20,6 +20,11 @@ public class Main {
 
     private static int sumPrime(int a, int b){
         int sum = 0;
+        // 둘 다 1인 경우
+        if (a == 1 && b == 1){
+            return 0;
+        }
+
         for (int i = a; i <=b; i++){
             if (isPrime(i)){
                 sum += i;
