@@ -17,6 +17,7 @@ public class Main {
     }
     // 윤년인지 아닌지 알려준다
     private static boolean isYoonYear(int x){
+        if (x % 100 == 0 && x % 400 != 0){ return false; }
         if (x % 4 == 0){ return true; }
         return false;
     }
