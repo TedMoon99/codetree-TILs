@@ -15,19 +15,17 @@ public class Main {
     // 몇 일이 있는지를 반환
     private static int countDate(int x){
         if (x == 2){ return 28; }
-        int countDate = 0;
         int[] arr31 = new int[]{1, 3, 5, 7, 8, 10, 12};
         int[] arr30 = new int[]{4, 6, 9, 11};
         
         // 확인 
         for(int i = 0; i < arr31.length; i++){
-            if (arr31[i] == x){ countDate = 31; }
+            if (arr31[i] == x){ return 31; }
         }
 
         for(int i = 0; i < arr30.length; i++){
-            if (arr30[i] == x){ countDate = 30; }
+            if (arr30[i] == x){ return 30; }
         }
-
-        return countDate;
+        return -1;
     }
 }
