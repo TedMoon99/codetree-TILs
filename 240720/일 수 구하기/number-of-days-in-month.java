@@ -17,7 +17,7 @@ public class Main {
         if (x == 2){ return 28; }
         int countDate = 0;
         int[] arr31 = new int[]{1, 3, 5, 7, 8, 10, 12};
-        int[] arr30 = new int[]{4, 6, 8, 11};
+        int[] arr30 = new int[]{4, 6, 9, 11};
         
         // 확인 
         for(int i = 0; i < arr31.length; i++){
