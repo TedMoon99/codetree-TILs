@@ -28,7 +28,7 @@ public class Main {
         int current = 0;
         int[] resultArr = new int[B.length];
 
-        while (current < A.length - B.length){
+        while (current <= A.length - B.length){
             for(int i = 0; i < B.length; i++){
                 if (A[current+i] == B[i]) resultArr[i] = A[current+i];
             }
