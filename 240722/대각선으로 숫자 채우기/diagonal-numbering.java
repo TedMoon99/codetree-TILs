@@ -34,7 +34,7 @@ public class Main {
         int r = 0;
         while(r != n-1){ // 오른쪽 아래에 갈 때까지 반복
             int j = r+1, c = m-1;
-            while(j < n){ // 아래에 닿을 때까지 반복
+            while(j < n && c-1 >= -1){ // 아래에 닿거나 왼쪽 벽에 닿을 때까지 반복
                 square[j][c] = num;
                 num++;
                 j++;
