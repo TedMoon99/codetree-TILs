@@ -18,7 +18,6 @@ public class Main {
     // 주어진 수들의 최소공배수(lcd)를 찾는 함수
     private static int fun(int[] A){
         if (A.length == 1) return A[0];
-        if (A.length == 2) return findLcd(A[0], A[1]);
         int m = A.length / 2;
         return findLcd(fun(Arrays.copyOfRange(A, 0, m)), fun(Arrays.copyOfRange(A, m, A.length)));
 
