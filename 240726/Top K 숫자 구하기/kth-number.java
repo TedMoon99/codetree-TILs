@@ -11,6 +11,8 @@ public class Main {
         // sort
         Arrays.sort(A, Collections.reverseOrder());
         // output
-        System.out.println(A[k]);
+        for (int i = 0; i < A.length; i++){
+            if (i == k-1) System.out.println(A[i]);
+        }
     }
 }
