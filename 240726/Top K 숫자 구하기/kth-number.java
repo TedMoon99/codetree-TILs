@@ -9,7 +9,7 @@ public class Main {
             A[i] = sc.nextInt();
         }
         // sort
-        Arrays.sort(A, Collections.reverseOrder());
+        Arrays.sort(A);
         // output
         for (int i = 0; i < A.length; i++){
             if (i == k-1) System.out.println(A[i]);
