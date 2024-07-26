@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        int[] A = new int[n];
+        int[] A = new int[2 * n];
         for (int i = 0; i < 2*n; i++){
             A[i] = sc.nextInt();
         }
@@ -20,7 +20,7 @@ public class Main {
         int maxSum = 0;
         // 오름차순 정렬
         Arrays.sort(A);
-        for(int i = 0; i <= n; i++){
+        for(int i = 0; i < n; i++){
             // 양 끝 값을 더한다
             int sum = A[i] + A[2*n-1-i];
             if (maxSum < sum) maxSum = sum;
