@@ -14,6 +14,7 @@ public class Main {
 
     // 두 단어에 속하는 문자들의 순서를 바꾸어 동일한 단어로 만들 수 있는지 여부를 출력
     private static String fun(String A, String B){
+        if(A.length() != B.length()) return "No";
         // char Array로 변환
         char[] charA = A.toCharArray();
         char[] charB = B.toCharArray();
