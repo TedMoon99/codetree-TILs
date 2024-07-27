@@ -9,9 +9,8 @@ public class Main {
         Product product1 = new Product(productName, productCode);
         Product product2 = new Product();
 
-        System.out.printf("product %d is %s\n",product1.productCode, product1.productName);
         System.out.printf("product %d is %s\n",product2.productCode, product2.productName);
-
+        System.out.printf("product %d is %s\n",product1.productCode, product1.productName);
 
     }
 }
