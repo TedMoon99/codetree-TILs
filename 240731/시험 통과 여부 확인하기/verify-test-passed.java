@@ -6,6 +6,6 @@ public class Main {
 
         int n = sc.nextInt();
         if (n >= 80) System.out.println("pass");
-        else System.out.printf("%d more score", 100-n);
+        else System.out.printf("%d more score", 80-n);
     }
 }
