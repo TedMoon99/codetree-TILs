@@ -14,7 +14,8 @@ public class Main {
         }
         start += d1;
         last += d2;
-
-        System.out.println(last-start);
+        if (m1 == m2 && d1 == d2){
+            System.out.println(1);
+        } else System.out.println(last-start);
     }
 }
