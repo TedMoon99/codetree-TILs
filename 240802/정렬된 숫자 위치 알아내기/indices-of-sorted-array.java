@@ -28,7 +28,6 @@ public class Main {
         });
 
         // ouput
-        System.out.println();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++){
                 if (copyList[i].num == numList[j].num && copyList[i].index == numList[j].index) break;
