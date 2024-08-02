@@ -6,16 +6,17 @@ public class Main {
         int[] dateList = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int m1 = sc.nextInt(), d1 = sc.nextInt(), m2 = sc.nextInt(), d2 = sc.nextInt();
         int start = 0, last=0;
-        for(int i = 0; i < m1; i++){
+        for(int i = 0; i < m1-1; i++){
             start += dateList[i];
         }
-        for(int j=0; j < m2; j++){
+        for(int j = 0; j < m2-1; j++){
+
             last += dateList[j];
         }
         start += d1;
         last += d2;
-        if (m1 == m2 && d1 == d2){
-            System.out.println(1);
-        } else System.out.println(last-start);
+        
+            System.out.println(last-start+1);
+    
     }
 }
