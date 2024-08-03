@@ -25,12 +25,18 @@ public class Main {
         gapOfDate = last - first;
 
         // m1월 d1일의 요일 == m2월 d2일의 요일 == target
-        if (dowList[findDow(gapOfDate)].equals(target) && target.equals("Mon")){
-            System.out.println(findWeekNumber(gapOfDate)+2);
-        } else if (dowList[findDow(gapOfDate)].equals(target)){
-            System.out.println(findWeekNumber(gapOfDate)+1);
+        if (target.equals("Mon")){
+            if (dowList[findDow(gapOfDate)].equals(target)){ // 시작과 끝이 해당
+                System.out.println(findWeekNumber(gapOfDate)+2);
+            } else { // 끝만 해당
+                System.out.println(findWeekNumber(gapOfDate)+1);
+            }
         } else {
-            System.out.println(findWeekNumber(gapOfDate));
+            if (dowList[findDow(gapOfDate)].equals(target)){ // 끝만 해당
+                System.out.println(findWeekNumber(gapOfDate)+1);
+            } else { //시작과 끝 둘 다 해당 X
+                System.out.println(findWeekNumber(gapOfDate));
+            }
         }
     }
 
