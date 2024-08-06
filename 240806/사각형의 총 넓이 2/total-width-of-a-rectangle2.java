@@ -27,10 +27,10 @@ public class Main {
         int s = 0;
         for(int i = 100; i<201; i++){
             for(int j = 100; j < 201; j++){
-                if (square[i][j] )
+                if (square[i][j] == 1) s++;
             }
-            System.out.println();
         }
+        System.out.println(s);
 
     }
 }
