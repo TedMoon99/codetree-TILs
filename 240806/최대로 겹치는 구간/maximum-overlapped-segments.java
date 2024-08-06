@@ -10,7 +10,7 @@ public class Main {
             for(int j = x1; j < x2; j++) interval[j] += 1;
         }
         int max = 0;
-        for (int i = 100; i < interval.length; i++){ // 100 ~ 200 확인
+        for (int i = 0; i < interval.length; i++){ // 100 ~ 200 확인
             if (interval[i] > max) max++;
         }
         // 출력
