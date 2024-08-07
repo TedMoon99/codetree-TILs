@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[][] square = new int[201][201];
+        int[][] square = new int[199][199];
         // 색종이 갯수
         int n = sc.nextInt();
         Coordinate[] startList = new Coordinate[n];
@@ -11,7 +11,7 @@ public class Main {
         // 좌표 입력 받기
         for (int i = 0; i < n; i++){
             // 좌표 입력
-            int x1 = sc.nextInt(), y1 = sc.nextInt();
+            int x1 = sc.nextInt()+100, y1 = sc.nextInt()+100;
             int x2 = x1 + 8, y2 = y1 + 8;
             // 객체 생성
             Coordinate bottomLeft = new Coordinate(x1, y1);
@@ -29,12 +29,10 @@ public class Main {
                 }
             }
         }
-        // A: 1, B: 2, M: 3
         // 넓이 영역 계산
         int s = 0;
-        for (int i = 0; i < 201; i++){
-            for (int j = 0; j < 201; j++){
-                // 빈 공간이 아님 and M 영역이 아님 s++
+        for (int i = 0; i < 199; i++){
+            for (int j = 0; j < 199; j++){
                 if (square[i][j] == 1) s++;
             }
         }
