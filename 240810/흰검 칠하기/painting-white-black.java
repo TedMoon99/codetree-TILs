@@ -7,14 +7,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Tile[] space = new Tile[100001];
-        for(int i = 0; i <space.length; i++){
-            space[i] = new Tile(i);
-        }
-        countList = new int[100001];
-        current = space.length / 2;
-
         int n = sc.nextInt();
+        ArrayList<Tile> space = new ArrayList<Tile>(100000);
+        for(int i = 0; i < 100000; i++){
+            Tile data = new Tile(i);
+            space.add(data);
+        }
+        current = space.size() / 2;
 
         for (int i = 0; i < n; i++){
             int x = sc.nextInt();
@@ -22,17 +21,17 @@ public class Main {
 
             if (dir == 'L'){ // 왼쪽으로 이동(White)
                 for (int j = current; j > current - x; j--){
-                    char color = (space[j].checkColor())? 'G': 'W';
-                    space[j].makeCount(color);
-                    space[j].color = (space[j].checkColor())? 'G': 'W';
+                    char color = (space.get(j).checkColor())? 'G': 'W';
+                    space.get(j).makeCount(color);
+                    space.get(j).color = (space.get(j).checkColor())? 'G': 'W';
                 }
                 // 마지막 위치 저장
                 current = current-x+1;
             } else if (dir == 'R'){ // 오른쪽으로 이동(Black)
                 for (int j = current; j < current + x; j++){
-                    char color = (space[j].checkColor())? 'G': 'B';
-                    space[j].makeCount(color);
-                    space[j].color = (space[j].checkColor())? 'G': 'B';
+                    char color = (space.get(j).checkColor())? 'G': 'B';
+                    space.get(j).makeCount(color);
+                    space.get(j).color = (space.get(j).checkColor())? 'G': 'B';
                 }
                 // 마지막 위치 저장
                 current = current+x-1;
@@ -40,8 +39,8 @@ public class Main {
         }
 
         int white = 0, black = 0, grey = 0;
-        for (int i = 0; i < space.length; i++){
-            char index = space[i].color;
+        for (int i = 0; i < space.size(); i++){
+            char index = space.get(i).color;
 
             if (index == 'W'){
                 white++;
@@ -61,6 +60,9 @@ public class Main {
 class Tile{
     int whiteCount = 0, blackCount = 0, index;
     char color;
+    // 초기 배열 선언 시 사용
+    Tile(){
+    }
     // index 정보를 담고있음
     Tile(int position){
         this.index = position;
