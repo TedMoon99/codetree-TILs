@@ -1,15 +1,14 @@
 import java.util.*;
 
 public class Main {
-    public static int[] countList;
     public static int current;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        ArrayList<Tile> space = new ArrayList<Tile>(10 * 10 * 10 * 10 * 10 * 3 + 1);
-        for(int i = 0; i < 10 * 10 * 10 * 10 * 10 * 3 + 1; i++){
+        ArrayList<Tile> space = new ArrayList<Tile>(10 * 10 * 10 * 10 * 10 * 2+ 1);
+        for(int i = 0; i < 10 * 10 * 10 * 10 * 10 * 2 + 1; i++){
             Tile data = new Tile(i);
             space.add(data);
         }
