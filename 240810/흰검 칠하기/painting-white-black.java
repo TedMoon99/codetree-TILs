@@ -8,8 +8,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        ArrayList<Tile> space = new ArrayList<Tile>(100000);
-        for(int i = 0; i < 100000; i++){
+        ArrayList<Tile> space = new ArrayList<Tile>(10 * 10 * 10 * 10 * 10 * 3 + 1);
+        for(int i = 0; i < 10 * 10 * 10 * 10 * 10 * 3 + 1; i++){
             Tile data = new Tile(i);
             space.add(data);
         }
