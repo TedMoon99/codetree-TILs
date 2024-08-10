@@ -7,11 +7,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Tile[] space = new Tile[20];
+        Tile[] space = new Tile[100000];
         for(int i = 0; i <space.length; i++){
             space[i] = new Tile(i);
         }
-        countList = new int[20];
+        countList = new int[100000];
         current = space.length / 2;
 
         int n = sc.nextInt();
