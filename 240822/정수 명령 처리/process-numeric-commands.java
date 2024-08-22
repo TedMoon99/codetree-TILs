@@ -18,16 +18,18 @@ public class Main {
     }
 
     private static void stack(String command){
-        if (command.equals("push")){
-            A.push(num);
-        } else if (command.equals("pop")){
-            System.out.println(A.pop());
-        } else if (command.equals("top")){
-            System.out.println(A.peek());
-        } else if (command.equals("size")){
-            System.out.println(A.size());
-        } else if (command.equals("empty")){
-            System.out.println((A.isEmpty())? 1: 0);
+        switch (command){
+            case "push":
+                A.push(num);
+                break;
+            case "pop":
+                System.out.println(A.pop());
+            case "top":
+                System.out.println(A.peek());
+            case "size":
+                System.out.println(A.size());
+            case "empty":
+                System.out.println((A.isEmpty())? 1: 0);
         }
     }
 }
