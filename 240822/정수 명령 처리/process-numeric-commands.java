@@ -24,12 +24,16 @@ public class Main {
                 break;
             case "pop":
                 System.out.println(A.pop());
+                break;
             case "top":
                 System.out.println(A.peek());
+                break;
             case "size":
                 System.out.println(A.size());
+                break;
             case "empty":
                 System.out.println((A.isEmpty())? 1: 0);
+                break;
         }
     }
 }
