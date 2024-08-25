@@ -5,8 +5,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int a = sc.nextInt();
-        int result = (a % 2 == 0)? (int) (a / 2): (int) (++a/2);
-        result = (result % 2 == 0)? (int) (result / 2): (int) (++result/2);
+        int result = (a % 2 == 0)? (int) (a / 2): a;
+        result = (result % 2 == 1)? (int) (++result / 2): result;
 
         System.out.println(result);
     }
