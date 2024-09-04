@@ -33,6 +33,7 @@ public class Main {
             // m보다 카운트가 높다면
             if (currentCount >= m) happySeq++;
         }
+
         // 열을 따라서 순회
         for(int i = 0; i< n; i++){
             int currentCount = 0;
