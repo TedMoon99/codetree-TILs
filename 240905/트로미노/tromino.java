@@ -1,68 +1,62 @@
 import java.util.Scanner;
 
 public class Main {
+    public static final int MAX_NUM = 200;
 
     public static int n, m;
-    public static int[][] A;
-    private static int shape;
+    public static int[][] grid = new int[MAX_NUM][MAX_NUM];
+
+    // 가능한 모든 모양을 전부 적어줍니다.
+    public static int[][][] shapes = new int[][][]{
+            {{1, 1, 0}, {1, 0, 0}, {0, 0, 0}},
+
+            {{1, 1, 0}, {0, 1, 0}, {0, 0, 0}},
+
+            {{1, 0, 0}, {1, 1, 0}, {0, 0, 0}},
+
+            {{0, 1, 0}, {1, 1, 0}, {0, 0, 0}},
+
+            {{1, 1, 1}, {0, 0, 0}, {0, 0, 0}},
+
+            {{1, 0, 0}, {1, 0, 0}, {1, 0, 0}},};
+
+    // 주어진 위치에 대하여 가능한 모든 모양을 탐색하며 최대 합을 반환합니다.
+    public static int getMaxSum(int x, int y) {
+        int maxSum = 0;
+
+        for (int i = 0; i < 6; i++) {
+            boolean isPossible = true;
+            int sum = 0;
+            for (int dx = 0; dx < 3; dx++)
+                for (int dy = 0; dy < 3; dy++) {
+                    if (shapes[i][dx][dy] == 0) continue;
+                    if (x + dx >= n || y + dy >= m) isPossible = false;
+                    else sum += grid[x + dx][y + dy];
+                }
+
+            if (isPossible) maxSum = Math.max(maxSum, sum);
+        }
+
+        return maxSum;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         n = sc.nextInt();
         m = sc.nextInt();
-        A = new int[n][m];
-        // input
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                A[i][j] = sc.nextInt();
-            }
-        }
 
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                grid[i][j] = sc.nextInt();
 
-        for (int i = 0; i < n-1; i++) {
-            int tempSum = 0;
-            for (int j = 0; j < m-1; j++) {
-                // 1번 모양
-                int sum1 = A[i][j] + A[i + 1][j] + A[i + 1][j + 1];
-                // 2번 모양
-                int sum2 = A[i][j] + A[i][j+1] + A[i + 1][j];
-                // 3번 모양
-                int sum3 = A[i][j] + A[i][j+1] + A[i + 1][j+1];
-                int sum = Math.max(sum1, sum2);
-                sum = Math.max(sum, sum3);
-                tempSum = Math.max(tempSum, sum);
-            }
-            shape = Math.max(shape, tempSum);
-        }
+        int ans = 0;
 
-        // 4번 모양
-        for (int i = 0; i < n-1; i++) {
-            int tempSum = 0;
-            for (int j = 1; j < m; j++) {
-                int sum = A[i][j] + A[i+1][j] + A[i + 1][j-1];
-                tempSum = Math.max(tempSum, sum);
-            }
-            shape = Math.max(shape, tempSum);
-        }
-        // 5번 모양
-        for (int i = 0; i < n; i++) {
-            int tempSum = 0;
-            for (int j = 0; j < m-2; j++) {
-                int sum = A[i][j] + A[i][j+1] + A[i][j+2];
-                tempSum = Math.max(tempSum, sum);
-            }
-            shape = Math.max(shape, tempSum);
-        }
-        // 6번 모양
-        for (int i = 0; i < n-2; i++) {
-            int tempSum = 0;
-            for (int j = 0; j < m; j++) {
-                int sum = A[i][j] + A[i+1][j] + A[i+2][j];
-                tempSum = Math.max(tempSum, sum);
-            }
-            shape = Math.max(shape, tempSum);
-        }
+        // 격자의 각 위치에 대하여 탐색하여줍니다.
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                ans = Math.max(ans, getMaxSum(i, j));
 
-        // 출력
-        System.out.println(shape);
+        System.out.print(ans);
     }
 }
