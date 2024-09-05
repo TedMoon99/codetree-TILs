@@ -17,31 +17,18 @@ public class Main {
             }
         }
 
-        // 1번 모양
-        for (int i = 0; i < n-1; i++) {
-            int tempSum = 0;
-            for (int j = 0; j < m-1; j++) {
-                int sum = A[i][j] + A[i + 1][j] + A[i + 1][j + 1];
-                tempSum = Math.max(tempSum, sum);
-            }
-            shape = Math.max(shape, tempSum);
-        }
 
-        // 2번 모양
         for (int i = 0; i < n-1; i++) {
             int tempSum = 0;
             for (int j = 0; j < m-1; j++) {
-                int sum = A[i][j] + A[i][j+1] + A[i + 1][j];
-                tempSum = Math.max(tempSum, sum);
-            }
-            shape = Math.max(shape, tempSum);
-        }
-
-        // 3번 모양
-        for (int i = 0; i < n-1; i++) {
-            int tempSum = 0;
-            for (int j = 0; j < m-1; j++) {
-                int sum = A[i][j] + A[i][j+1] + A[i + 1][j+1];
+                // 1번 모양
+                int sum1 = A[i][j] + A[i + 1][j] + A[i + 1][j + 1];
+                // 2번 모양
+                int sum2 = A[i][j] + A[i][j+1] + A[i + 1][j];
+                // 3번 모양
+                int sum3 = A[i][j] + A[i][j+1] + A[i + 1][j+1];
+                int sum = Math.max(sum1, sum2);
+                sum = Math.max(sum, sum3);
                 tempSum = Math.max(tempSum, sum);
             }
             shape = Math.max(shape, tempSum);
