@@ -11,7 +11,7 @@ public class Main {
         c = sc.nextInt();
 
         int min = (a >= b)? b: a;
-        min = (b >= c)? c: b;
+        min = (min >= c)? c: min;
 
         System.out.println(min);
     }
