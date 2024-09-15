@@ -9,7 +9,7 @@ public class Main {
 
         score = sc.nextInt();
 
-        for (int i = score; i < 100; i++){
+        for (int i = score; i <= 100; i++){
             fun(i);
         }
     }
