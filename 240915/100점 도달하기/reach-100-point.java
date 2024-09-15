@@ -22,6 +22,6 @@ public class Main {
         else if (score >= 60) result = "D";
         else result = "F";
 
-        System.out.println(result + " ");
+        System.out.print(result + " ");
     }
 }
