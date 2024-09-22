@@ -21,6 +21,6 @@ public class Main {
             }
         }
 
-        if(cnt == 0) System.out.println("None")
+        if(cnt == 0) System.out.println("None");
     }
 }
