@@ -24,6 +24,6 @@ public class Main {
             }
         }
 
-        System.out.printf("%d %.2f", cnt, (double)(averageLength / cnt));
+        System.out.printf("%d %.2f", cnt, (double)(Math.round(100 * averageLength / cnt) / 100));
     }
 }
