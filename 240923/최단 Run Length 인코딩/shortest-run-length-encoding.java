@@ -12,13 +12,30 @@ public class Main {
         A = sc.next().toCharArray();
         n = A.length;
 
-        Arrays.sort(A);
 
-        // function call
-        String result = runLengthEncoding();
+        int cnt = n * 20;
+        for (int i = 0; i < n; i++) {
+
+            // function call
+            String result = runLengthEncoding();
+            cnt = Math.min(cnt, result.length());
+            shift();
+        }
 
         // output
-        System.out.println(result.length());
+        System.out.println(cnt);
+
+    }
+
+    // shift
+    private static void shift(){
+        char temp = A[n - 1];
+
+        for (int i = n-1; i > 0; i--) {
+            A[i] = A[i - 1];
+        }
+
+        A[0] = temp;
     }
 
     // RunLengthEncoding
