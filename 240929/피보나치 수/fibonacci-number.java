@@ -9,19 +9,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         n = sc.nextInt();
-        DP = new int[n+1];
+        DP = new int[50];
 
         // init
-        init();
         DP[1] = DP[2] = 1;
 
         System.out.println(fibonacci(n));
 
 
-    }
-
-    static void init(){
-        Arrays.fill(DP, -1);
     }
 
     static int fibonacci(int num){
