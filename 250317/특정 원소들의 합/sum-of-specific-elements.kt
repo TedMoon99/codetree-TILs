@@ -7,7 +7,7 @@ fun main(){
     val inputList = mutableListOf<List<Int>>()
 
     // input 
-    (0..3).forEach{ inputList.add(br.readLine().split(" ").map{it.toInt()})}
+    (0..3).forEach{ inputList.add(br.readLine().trim().split(" ").map{it.toInt()})}
     
     var result = 0
     (0 .. 3).forEach{ row -> 
