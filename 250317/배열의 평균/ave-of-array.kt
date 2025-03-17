@@ -11,26 +11,25 @@ fun main(){
     }
     // 가로 평균
     (0 .. 1).forEach{ index ->
-        val temp = (inputList[index].sum() / 4).toDouble()
+        val temp = (inputList[index].sum() / 4.0)
         val result = String.format("%.1f ", temp)
         bw.write(result)
     }
     bw.write("\n")
     // 세로 평균
     (0..3).forEach{ index ->
-        val temp = ((inputList[0][index] + inputList[1][index]) / 2).toDouble()
+        val temp = ((inputList[0][index] + inputList[1][index]) / 2.0)
         val result = String.format("%.1f ", temp)
         bw.write(result)
     }
     bw.write("\n")
     // 전체 평균
-    val total = inputList.map{ 
+    val total = inputList.map{
         it.sum()
     }
-    val average = (total.sum() / 8).toDouble()
+    val average = (total.sum() / 8.0)
     val result = String.format("%.1f", average)
     bw.write(result)
-
 
     bw.flush()
     bw.close()
